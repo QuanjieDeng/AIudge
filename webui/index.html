@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AIudge · 代码审核台</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="aurora" aria-hidden="true"></div>
+
+<div id="boot" class="boot">
+  <div class="boot-mark">AIudge</div>
+  <div class="boot-bar"><i></i></div>
+</div>
+
+<div id="app" hidden>
+  <aside class="side">
+    <button id="home-btn" class="home-btn">← 首页</button>
+    <div class="brand">
+      <span class="dot"></span>
+      <b>AIudge</b>
+      <em>代码审核台</em>
+    </div>
+    <button id="proj-switch" class="proj-btn" popovertarget="projpop" hidden></button>
+    <nav id="nav" hidden>
+      <a data-page="dashboard" data-icon="◈">概览</a>
+      <a data-page="issues" data-icon="◉">问题库</a>
+      <a data-page="reports" data-icon="▤">报告</a>
+      <a data-page="tasks" data-icon="⟳">任务</a>
+      <a data-page="stats" data-icon="◔">统计</a>
+      <a data-page="settings" data-icon="⚙">设置</a>
+    </nav>
+    <a id="admin-nav" class="admin-nav" href="#/admin" hidden>⌘ 系统设置</a>
+    <div class="side-foot">
+      <button id="who" class="who" popovertarget="userpop"></button>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <h1 id="page-title">概览</h1>
+      <nav id="home-tabs" class="tabs" hidden>
+        <a href="#/home" data-tab="home">首页</a>
+        <a href="#/workbench" data-tab="workbench">工作台</a>
+      </nav>
+      <div class="topbar-tools" id="topbar-tools">
+        <select id="repo-filter" class="inp sel"></select>
+        <input id="date-from" class="inp date" type="date" aria-label="起始日期">
+        <span class="tilde">→</span>
+        <input id="date-to" class="inp date" type="date" aria-label="结束日期">
+        <button id="refresh" class="btn ghost" title="刷新">刷新</button>
+      </div>
+    </header>
+    <section id="view" class="view"></section>
+  </main>
+</div>
+
+<div id="drawer" class="drawer" hidden>
+  <div class="drawer-mask" data-close></div>
+  <div class="drawer-panel" role="dialog" aria-modal="true">
+    <header class="drawer-head">
+      <div id="drawer-title"></div>
+      <button class="btn ghost" data-close>关闭</button>
+    </header>
+    <div id="drawer-body" class="drawer-body"></div>
+  </div>
+</div>
+
+<div id="userpop" popover class="pop">
+  <div id="userpop-body"></div>
+</div>
+
+<div id="projpop" popover class="pop">
+  <div id="projpop-body"></div>
+</div>
+
+<div id="toast" class="toast" hidden></div>
+
+<script src="/app.js"></script>
+</body>
+</html>

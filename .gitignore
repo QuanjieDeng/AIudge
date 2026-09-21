@@ -1,0 +1,18 @@
+# 构建产物
+/aiudge
+/dist/
+
+# 本地配置（含网关密钥、飞书 App Secret、webhook，别提交）
+/aiudge.conf
+
+# 运行时数据：SQLite、仓库工作副本、加密主密钥
+/data/
+/internal/config/data/
+
+# 本机工具配置（含个人 token 与权限白名单）
+.claude/settings.local.json
+.kilo/agent-manager.json
+
+# 杂项
+*.log
+.DS_Store
